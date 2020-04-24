@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block content %}
+	<header class="main-header product-header">
+		<div class="wrapper">
+			<div class="main-header__title none">
+				<p uk-icon="icon: search; ratio: 1.4"></p>
+				<p>Все Что Угодно</p>
+			</div>
+		</div>
+	</header>
+
+	<section class="info-section">
+		<div class="wrapper">
+         <h2 class="info-section__title">Мои товары</h2>
+         <p class="info-section__desc">
+            Введите свой номер чека. Вы можете выбрать какой товар выкупить или же выкупить все
+         </p>
+
+         <div class="buyback">
+				<input class="uk-input" type="text" placeholder="Введите чек">
+				<button class="info-section-categories__button">Поиск</button>
+				<button class="info-section-categories__button" uk-toggle="target: #buyback">Выкупить</button>
+				<button class="info-section-categories__button" uk-toggle="target: #extend">Продлить</button>
+
+				<div id="buyback" uk-modal>
+					<div class="uk-modal-dialog uk-modal-body">
+						<h2 class="uk-modal-title">Выкуп товара</h2>
+						
+						<div class="buyback-modal">
+					 		<div class="buyback-modal__field">
+								<p>Номер карты</p>
+								<input class="uk-input uk-form-small" type="text" placeholder="12345678912">
+							</div>
+
+							<div class="buyback-modal__field">
+								<div class="buyback-modal__field-date">
+									<p>Срок карты</p>
+									<input class="uk-input uk-form-small" type="text" placeholder="06">
+									<input class="uk-input uk-form-small" type="text" placeholder="21">
+								</div>
+
+								<div>
+									<p>CVV код</p>
+									<input class="uk-input uk-form-small" type="text" placeholder="cvs">
+								</div>
+							</div>
+						</div>
+
+						<p class="uk-text-right">
+							<button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+							<button class="uk-button uk-button-primary" type="button">Подтвердить</button>
+						</p>
+					</div>
+				</div>
+
+				<div id="extend" uk-modal>
+					<div class="uk-modal-dialog uk-modal-body">
+						<h2 class="uk-modal-title">Продливание отсрочки</h2>
+					
+						<div class="buyback-modal">
+							<div class="buyback-modal__field">
+							  <p>Номер карты</p>
+							  <input class="uk-input uk-form-small" type="text" placeholder="12345678912">
+						  </div>
+
+						  <div class="buyback-modal__field">
+							  <div class="buyback-modal__field-date">
+								  <p>Срок карты</p>
+								  <input class="uk-input uk-form-small" type="text" placeholder="06">
+								  <input class="uk-input uk-form-small" type="text" placeholder="21">
+							  </div>
+
+							  <div>
+								  <p>CVV код</p>
+								  <input class="uk-input uk-form-small" type="text" placeholder="cvs">
+							  </div>
+						  </div>
+					  </div>
+
+						<p class="uk-text-right">
+							<button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+							<button class="uk-button uk-button-primary" type="button">Подтвердить</button>
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="info-section-list info-section-list-product buyback-list">
+				<div class="info-section-list__item">
+					<div class="info-section-list-item__title">
+						<p>Iphone 11</p>
+						<input class="uk-checkbox" type="checkbox">
+					</div>
+
+					<div class="info-section-list-item__container">
+						<div class="info-section-list-item-container__img">
+							<img src="./img/iphonePro.png" alt="Product">
+						</div>
+
+						<div class="info-section-list-item-container__info">
+							<p class="info-section-list-item-container-info__price">
+								Цена выкупа - 1200 ₸
+							</p>
+							<p class="info-section-list-item-container-info__price">
+								Цена продливания - 1200 ₸
+							</p>
+							
+							<p class="info-section-list-item-container-info__desc">
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh…
+							</p>
+						</div>
+					</div>
+            	</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

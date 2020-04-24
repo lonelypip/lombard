@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block content %}
+	<header class="main-header product-header">
+		<div class="wrapper">
+			<div class="main-header__title none">
+				<p uk-icon="icon: search; ratio: 1.4"></p>
+				<p>Все Что Угодно</p>
+			</div>
+		</div>
+	</header>
+	{% if product == None %}
+		СЬЕБАЛСЯ
+	{% else %}
+		<section class="info-section">
+			<div class="wrapper">
+			 <div class="product-detail">
+				<div class="product-detail-img">
+				   <img src="./img/iphonePro.png" alt="">
+				</div>
+
+				<div class="product-detail-info">
+				   <p class="product-detail-info__price">
+					  Iphone 11 pro - 68 500 ₸
+				   </p>
+
+				   <p class="product-detail-info__month">
+					  На продаже: <span>2 месяца</span>
+				   </p>
+
+				   <p class="product-detail-info__buy uk-button uk-button-default" uk-toggle="target: #buy">
+							Зарезервировать
+						</p>
+
+						<div id="buy" uk-modal>
+							<div class="uk-modal-dialog uk-modal-body">
+								<h2 class="uk-modal-title">Зарезервировать товар</h2>
+
+								<div class="buyback-modal">
+									<div class="buyback-modal__field">
+										<p>Имя</p>
+										<input class="uk-input uk-form-small" type="text" placeholder="Введите имя">
+									</div>
+
+									<div class="buyback-modal__field">
+										<p>Фамилия</p>
+										<input class="uk-input uk-form-small" type="text" placeholder="Введите фамилию">
+									</div>
+
+									<div class="buyback-modal__field">
+										<p>Адрес</p>
+										<input class="uk-input uk-form-small" type="text" placeholder="Введите адрес">
+									</div>
+
+									<div class="buyback-modal__field">
+										<p>Номер телефона</p>
+										<input class="uk-input uk-form-small" type="text" placeholder="87757898987">
+									</div>
+
+									<div class="buyback-modal__field">
+										<p>Электронная почта</p>
+										<input class="uk-input uk-form-small" type="text" placeholder="example@email.com">
+									</div>
+
+									<div class="buyback-modal__field">
+										<p>Номер карты</p>
+										<input class="uk-input uk-form-small" type="text" placeholder="12345678912">
+									</div>
+
+									<div class="buyback-modal__field">
+										<div class="buyback-modal__field-date">
+											<p>Срок карты</p>
+											<input class="uk-input uk-form-small" type="text" placeholder="06">
+											<input class="uk-input uk-form-small" type="text" placeholder="21">
+										</div>
+
+										<div>
+											<p>CVV код</p>
+											<input class="uk-input uk-form-small" type="text" placeholder="cvs">
+										</div>
+									</div>
+								</div>
+
+								<p class="uk-text-right">
+									<button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+									<button class="uk-button uk-button-primary" type="button">Подтвердить</button>
+								</p>
+							</div>
+						</div>
+				</div>
+			 </div>
+
+			 <p class="product-detail-desc">
+				Beautiful home on quiet, tree lined street. Addition and renovation create desirable layout with gracious master suite, oversized walk-in closet and lovely bathroom! Formal living room with working fireplace and French doors open to gorgeous, lushly landscaped yard. Home features formal dining room, elegant kitchen with wood beamed ceilings, bright breakfast room off family room overlooking magnificent pool and patio. Details like crown molding, coral rock wall, marble and hardwood floors, tumbled marble driveway and lovely front porch create wonderful ambiance.
+			 </p>
+			</div>
+		</section>
+	{% endif %}
+{% endblock content %}

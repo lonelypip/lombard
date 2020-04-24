@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+	<header class="main-header">
+		<div class="wrapper">
+			<div class="main-header__info">
+				<p>Lombard trade</p>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut…</p>
+			</div>
+
+			<div class="main-header__title">
+				<p uk-icon="icon: search; ratio: 1.4"></p>
+				<p>Все Что Угодно</p>
+			</div>
+		</div>
+	</header>
+	<section class="info-section">
+		<div class="wrapper">
+			<h2 class="info-section__title">Мы предлагаем лучшие предложения</h2>
+			<p class="info-section__desc">Look at our Latest listed properties and check out the facilities on them, We have already sold more than 5,000 Homes and we are still going at very good pace. We would love you to look into these properties and we hope that you will find something match-able to your needs.</p>
+
+			<div class="info-section-list">
+				{% for offer in offers %}
+					<div class="info-section-list__item">
+						<p class="info-section-list-item__title">{{ offer.name }}</p>
+
+						<div class="info-section-list-item__container">
+							<div class="info-section-list-item-container__img">
+								<img src="{{ offer.photo.url }}" alt="Product">
+							</div>
+
+							<div class="info-section-list-item-container__info">
+								<p class="info-section-list-item-container-info__price">
+									{{ offer.selling_price }} тенге
+								</p>
+
+								<p class="info-section-list-item-container-info__desc">
+									{{ offer.description|striptags|truncatechars:150 }}
+								</p>
+
+								<a href="{{ offer.get_absolute_url }}" class="info-section-list-item-container-info__more">
+									Подробнее <span uk-icon="triangle-right"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<p class="info-section-button">
+				<a href="{% url 'products_url' %}">Смотреть весь список</a>
+			</p>
+		</div>
+	</section>
+{% endblock content %}
